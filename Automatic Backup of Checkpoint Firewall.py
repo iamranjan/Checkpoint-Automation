@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[1]:
-
-
+pip install paramiko
 import paramiko
 import pandas as pd
 import datetime
@@ -15,9 +12,6 @@ port=input("Enter the opened port of the Firewall\n")
 commands=['clish -c "lock database override"','clish -c "show asset all"','clish -c "show configuration"','clish -c "cphaprob stat"',
           'clish -c "show configuration static-route"','clish -c "fw getifs"','clish -c "show route"',
          'clish -c "show configuration interface"','clish -c "show interfaces all"','cphaprob stat','fw stat']
-
-
-# In[2]:
 
 
 print ("Now you will see the commands that are running in the background \n")
@@ -38,16 +32,4 @@ for j in commands:
     with open(f'{h}{z}.txt', 'a') as f:
         print(f'{j}\n {b}\n', file=f)
 print (f"File saved with the name of {h}{z}.txt")
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
